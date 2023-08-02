@@ -1,22 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
-import PokemonList from './components/PokemonList/PokemonList'; // Updated import path
+import PokemonList from './components/PokemonList/PokemonList';
 import ErrorHandler from './components/Others/ErrorHandler';
-import Navbar from './components/Navbar/Navbar'; // Updated import path
-import PokemonDetails from './components/PokemonDetails/PokemonDetails'; // Updated import path
+import Navbar from './components/Navbar/Navbar';
+import PokemonDetails from './components/PokemonDetails/PokemonDetails';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div className="App">
       <ErrorHandler>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<PokemonList />} />
-            <Route path="/pokemon/:id" element={<PokemonDetails />} />
-          </Routes>
-        </Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<PokemonList />} />
+          <Route path="/pokemon/:id" element={<PokemonDetails />} />
+        </Routes>
       </ErrorHandler>
     </div>
   );
