@@ -14,7 +14,7 @@ code {
 /* index.css */
 
 /* Add a class to the parent container of the lazy loading gif image */
-.lazy-loading-container {
+#lazy-loading-container {
   position: relative; /* Set the parent container as a relative positioned element */
   width: 100vw;
   height: 100vh;

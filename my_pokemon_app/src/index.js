@@ -1,3 +1,5 @@
+// index.js
+
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -12,24 +14,31 @@ const LazyApp = React.lazy(() => {
   return new Promise((resolve) => setTimeout(resolve, 5000)).then(() => import('./App'));
 });
 
-//const LazyPokemonDetails = React.lazy(() => {
-  // Simulate a delay before loading the lazy component (e.g., 2 seconds delay)
-  //return new Promise((resolve) => setTimeout(resolve, 2000)).then(() => import('./components/PokemonDetails/PokemonDetails'));
-//});
+const LoadingFallback = () => {
+  // Customize the loading fallback with just the gif image centered
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
+      <img className="lazy" src={loadingImage} alt="Loading..." />
+    </div>
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>
-     {/* Add the id attribute to the parent container of the lazy loading gif image */}
-     <div id="">
-      <Suspense fallback={<img className="llazy-loading-container" src={loadingImage} alt="Loading..." />}>
-        <Router>
-          <LazyApp />
-        </Router>
-      </Suspense>
-    </div>
-    <Suspense fallback={<div>Loading PokemonDetails...</div>}>
-      <PokemonDetails />
+    <Suspense fallback={<LoadingFallback />}>
+      <Router>
+        <LazyApp />
+      </Router>
     </Suspense>
+    <PokemonDetails />
   </React.StrictMode>,
   document.getElementById('root')
 );
