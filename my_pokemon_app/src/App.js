@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
-import PokemonList from './components/PokemonList/PokemonList';
+//import PokemonList from './components/PokemonList/PokemonList';
 import ErrorHandler from './components/Others/ErrorHandler';
 import Navbar from './components/Navbar/Navbar';
-import PokemonDetails from './components/PokemonDetails/PokemonDetails';
+import DetailsLazyLoading from './components/PokemonDetails/DetailsLazyLoading';
+
+// Lazy loading for the components
+const LazyPokemonList = React.lazy(() => import('./components/PokemonList/PokemonList'));
 
 function App() {
   const location = useLocation();
@@ -18,8 +21,8 @@ function App() {
       <ErrorHandler>
         <Navbar />
         <Routes>
-          <Route path="/" element={<PokemonList />} />
-          <Route path="/pokemon/:id" element={<PokemonDetails />} />
+          <Route path="/" element={<LazyPokemonList />} />
+          <Route path="/pokemon/:id" element={<DetailsLazyLoading />} />
         </Routes>
       </ErrorHandler>
     </div>

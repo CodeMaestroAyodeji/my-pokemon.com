@@ -7,17 +7,29 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import loadingImage from './loading.gif'; // Import your loading image here
 
-// Lazy loading for the App component
-const LazyApp = React.lazy(() => import('./App'));
+const LazyApp = React.lazy(() => {
+  // Simulate a delay before loading the lazy component (e.g., 5 seconds delay)
+  return new Promise((resolve) => setTimeout(resolve, 5000)).then(() => import('./App'));
+});
+
+//const LazyPokemonDetails = React.lazy(() => {
+  // Simulate a delay before loading the lazy component (e.g., 2 seconds delay)
+  //return new Promise((resolve) => setTimeout(resolve, 2000)).then(() => import('./components/PokemonDetails/PokemonDetails'));
+//});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<img src={loadingImage} alt="Loading..." />}>
-      <Router>
-        <LazyApp />
-      </Router>
+     {/* Add the id attribute to the parent container of the lazy loading gif image */}
+     <div id="">
+      <Suspense fallback={<img className="llazy-loading-container" src={loadingImage} alt="Loading..." />}>
+        <Router>
+          <LazyApp />
+        </Router>
+      </Suspense>
+    </div>
+    <Suspense fallback={<div>Loading PokemonDetails...</div>}>
+      <PokemonDetails />
     </Suspense>
-    <PokemonDetails />
   </React.StrictMode>,
   document.getElementById('root')
 );
