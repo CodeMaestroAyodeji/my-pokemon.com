@@ -1,4 +1,4 @@
-# Welcome to My Pokemon App
+# Welcome to <a href="https://main.d3invrvazc6sgz.amplifyapp.com/">My Pokemon App</a>
 ***
 ## Task
 The task of this project is to create a multiple-page application using ReactJS that allows users to explore a list of Pokemon, view their details, and search for specific Pokemon. The project involves fetching data from an external API, implementing lazy loading for the Pokemon list, handling errors gracefully, and ensuring a smooth user experience.
@@ -28,6 +28,8 @@ This will launch the development server, and you can access the application by v
 
 ### The Core Team
  Ajuwon Ayodeji (ajuwonayodeji@yahoo.com)
+
+ This app was deployed on AWS Amplify, here is the link: https://main.d3invrvazc6sgz.amplifyapp.com/
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
 <span><img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px'></span>
