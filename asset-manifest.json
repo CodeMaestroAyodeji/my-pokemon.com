@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/my-pokemon.com/static/css/main.dd32c790.css",
+    "main.js": "/my-pokemon.com/static/js/main.46ff30f6.js",
+    "static/css/985.3ec4d234.chunk.css": "/my-pokemon.com/static/css/985.3ec4d234.chunk.css",
+    "static/js/985.b3c17abc.chunk.js": "/my-pokemon.com/static/js/985.b3c17abc.chunk.js",
+    "static/css/148.07981443.chunk.css": "/my-pokemon.com/static/css/148.07981443.chunk.css",
+    "static/js/148.a3e862a4.chunk.js": "/my-pokemon.com/static/js/148.a3e862a4.chunk.js",
+    "index.html": "/my-pokemon.com/index.html",
+    "main.dd32c790.css.map": "/my-pokemon.com/static/css/main.dd32c790.css.map",
+    "main.46ff30f6.js.map": "/my-pokemon.com/static/js/main.46ff30f6.js.map",
+    "985.3ec4d234.chunk.css.map": "/my-pokemon.com/static/css/985.3ec4d234.chunk.css.map",
+    "985.b3c17abc.chunk.js.map": "/my-pokemon.com/static/js/985.b3c17abc.chunk.js.map",
+    "148.07981443.chunk.css.map": "/my-pokemon.com/static/css/148.07981443.chunk.css.map",
+    "148.a3e862a4.chunk.js.map": "/my-pokemon.com/static/js/148.a3e862a4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd32c790.css",
+    "static/js/main.46ff30f6.js"
+  ]
+}
